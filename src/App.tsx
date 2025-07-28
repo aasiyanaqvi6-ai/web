@@ -89,7 +89,7 @@ function App() {
       
       // Triangle moves down with scroll
       if (triangleRef.current) {
-        triangleRef.current.style.transform = `translate(-50%, ${scrollY * 0.4}px)`;
+        triangleRef.current.style.transform = `translate(-${scrollY * 0.4}px)`;
       }
       
       // New section comes up from bottom
