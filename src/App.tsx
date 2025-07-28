@@ -109,13 +109,12 @@ function App() {
     backgroundAttachment: 'fixed'
   }}
 />
+{/* Portrait */}
+<div 
+  ref={portraitRef}
+  className="fixed top-[10%] left-1/2 -translate-x-1/2 z-10 transition-transform duration-100 ease-out"
+>
 
-        {/* Portrait */}
-        <div
-          ref={portraitRef}
-          className="absolute inset-0 flex items-center justify-center z-10 transition-transform duration-100 ease-out"
-          style={{ top: '-10%' }}
-        >
           <div className="relative">
             <div
               className="w-96 h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] overflow-hidden opacity-0 animate-fade-in-delayed"
