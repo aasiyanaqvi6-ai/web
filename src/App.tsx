@@ -79,7 +79,7 @@ function App() {
       
       // Portrait moves down slowly (opposite direction to new section)
       if (portraitRef.current) {
-        portraitRef.current.style.transform = `translateY(${scrollY * -1.3}px)`;
+        portraitRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
       }
       
       // Main text (I EDIT VISUALS...) moves up with scroll
