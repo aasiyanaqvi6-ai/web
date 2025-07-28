@@ -130,7 +130,7 @@ function App() {
                 alt="Portrait"
                 className="w-full h-full object-cover grayscale contrast-110 brightness-90"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
         </div>
