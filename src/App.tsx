@@ -64,6 +64,8 @@ function App() {
   const portraitRef = useRef<HTMLDivElement>(null);
   const backgroundTextRef = useRef<HTMLDivElement>(null);
   const newSectionRef = useRef<HTMLDivElement>(null);
+  const mainTextRef = useRef<HTMLDivElement>(null);
+  const triangleRef = useRef<HTMLDivElement>(null);
 
 
   useEffect(() => {
@@ -78,6 +80,16 @@ function App() {
       // Portrait moves down slowly (opposite direction to new section)
       if (portraitRef.current) {
         portraitRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
+      }
+      
+      // Main text (I EDIT VISUALS...) moves up with scroll
+      if (mainTextRef.current) {
+        mainTextRef.current.style.transform = `translateY(-${scrollY * 0.5}px)`;
+      }
+      
+      // Triangle moves down with scroll
+      if (triangleRef.current) {
+        triangleRef.current.style.transform = `translate(-50%, ${scrollY * 0.4}px)`;
       }
       
       // New section comes up from bottom
@@ -109,7 +121,7 @@ function App() {
         {/* Portrait */}
         <div 
           ref={portraitRef}
-          className="absolute inset-0 flex items-center justify-center z-10" 
+          className="absolute inset-0 flex items-center justify-center z-10 transition-transform duration-100 ease-out" 
           style={{ top: '-10%' }}
         >
           <div className="relative"> 
@@ -151,7 +163,8 @@ function App() {
         
         {/* Main Typography */}
         <div 
-          className="absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out" 
+          ref={mainTextRef}
+          className="absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out"
           style={{ top: '60%' }}
         >
           <div className="text-center z-10 px-6">
@@ -183,6 +196,7 @@ function App() {
 
         {/* Bottom Triangle Shape */}
         <div 
+          ref={triangleRef}
           className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in-delayed z-30"
           style={{ animationDelay: '3.5s', animationFillMode: 'forwards' }}
         >
