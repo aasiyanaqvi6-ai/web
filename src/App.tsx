@@ -196,7 +196,7 @@ style={{ animationDelay: '3.5s', animationFillMode: 'forwards' }}
       {/* Portfolio Section */}
       <div
         ref={newSectionRef}
-        className="relative z-20 bg-white min-h-screen"
+        className="relative z-40 bg-white min-h-screen"
         style={{ transform: 'translateY(100vh)' }}
       >
         <div className="container mx-auto px-6 py-20">
