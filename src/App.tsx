@@ -61,39 +61,29 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
 
 function App() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
   const portraitRef = useRef<HTMLDivElement>(null);
   const backgroundTextRef = useRef<HTMLDivElement>(null);
+  const newSectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current || !textRef.current) return;
-      
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      const x = (clientX / innerWidth - 0.5) * 15;
-      const y = (clientY / innerHeight - 0.5) * 15;
-      
-      textRef.current.style.transform = `translate(${x}px, ${y}px)`;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       
-      // Background text moves up with scroll (faster than normal scroll)
+      // Background text (Aamir Naqvi) moves up with scroll as new section comes up
       if (backgroundTextRef.current) {
-        backgroundTextRef.current.style.transform = `translateY(-${scrollY * 0.5}px)`;
+        backgroundTextRef.current.style.transform = `translateY(-${scrollY * 0.8}px)`;
       }
       
-      // Portrait moves down slowly (opposite direction, creating parallax)
+      // Portrait moves down slowly (opposite direction to new section)
       if (portraitRef.current) {
-        portraitRef.current.style.transform = `translateY(${scrollY * 0.2}px)`;
+        portraitRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
+      }
+      
+      // New section comes up from bottom
+      if (newSectionRef.current) {
+        const translateY = Math.max(0, 100 - (scrollY * 0.1));
+        newSectionRef.current.style.transform = `translateY(${translateY}vh)`;
       }
     };
 
@@ -161,7 +151,6 @@ function App() {
         
         {/* Main Typography */}
         <div 
-          ref={textRef}
           className="absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out" 
           style={{ top: '60%' }}
         >
@@ -206,7 +195,11 @@ function App() {
       </div>
 
       {/* New Section that enters from bottom */}
-      <div className="relative z-20 bg-white min-h-screen">
+      <div 
+        ref={newSectionRef}
+        className="relative z-20 bg-white min-h-screen"
+        style={{ transform: 'translateY(100vh)' }}
+      >
         <div className="container mx-auto px-6 py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-bosenAlt text-gray-900 mb-8 opacity-0 animate-fade-in-delayed">
