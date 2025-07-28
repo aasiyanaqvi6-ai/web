@@ -104,7 +104,7 @@ function App() {
      <div 
   ref={heroRef}
   className="relative min-h-screen w-full bg-transparent"
-
+>  </div>
     <div 
   className="absolute inset-0 bg-cover bg-center opacity-100"
   style={{
