@@ -112,7 +112,7 @@ function App() {
 {/* Portrait */}
 <div 
   ref={portraitRef}
-  className="fixed top-[-0%] left-1/2 -translate-x-1/2 z-10 transition-transform duration-100 ease-out"
+  className="fixed top-[-10%] left-1/2 -translate-x-1/2 z-10 transition-transform duration-100 ease-out"
 >
 
           <div className="relative">
