@@ -25,7 +25,7 @@ const testimonialBadges: TestimonialBadge[] = [
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div 
-      className="absolute opacity-0 animate-fade-in-delayed group cursor-default"
+  className="fixed opacity-0 animate-fade-in-delayed group cursor-default"
       style={{ 
         top: badge.position.top, 
         left: badge.position.left,
