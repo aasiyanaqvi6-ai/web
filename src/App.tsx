@@ -88,12 +88,12 @@ function App() {
       
       // Background text moves up with scroll (faster than normal scroll)
       if (backgroundTextRef.current) {
-        backgroundTextRef.current.style.transform = `translateY(-${scrollY * 0.8}px)`;
+        backgroundTextRef.current.style.transform = `translateY(-${scrollY * 0.5}px)`;
       }
       
       // Portrait moves down slowly (opposite direction, creating parallax)
       if (portraitRef.current) {
-        portraitRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
+        portraitRef.current.style.transform = `translateY(${scrollY * 0.2}px)`;
       }
     };
 
@@ -101,15 +101,15 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <div className="relative" style={{ height: '200vh' }}>
+    <div className="relative">
       {/* Main Hero Section */}
       <div 
         ref={heroRef}
-        className="relative min-h-screen w-full overflow-hidden bg-transparent fixed inset-0"
+        className="relative min-h-screen w-full overflow-hidden bg-transparent"
       >
         {/* External Background Image */} 
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-100 bg-fixed"
+          className="absolute inset-0 bg-cover bg-center opacity-100"
           style={{
             backgroundImage: `url('/public/bg.png')`,
             backgroundAttachment: 'fixed'
@@ -206,7 +206,7 @@ function App() {
       </div>
 
       {/* New Section that enters from bottom */}
-      <div className="relative z-20 bg-white min-h-screen" style={{ marginTop: '100vh' }}>
+      <div className="relative z-20 bg-white min-h-screen">
         <div className="container mx-auto px-6 py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-bosenAlt text-gray-900 mb-8 opacity-0 animate-fade-in-delayed">
