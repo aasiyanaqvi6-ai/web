@@ -79,11 +79,11 @@ function App() {
           }
 
           if (triangleRef.current) {
-            triangleRef.current.style.transform = `translate(-50%, ${scrollY * 0.4}px)`;
+            triangleRef.current.style.transform = `translate(-50%, ${scrollY * 0.4}px)`; 
           }
 
           if (newSectionRef.current) {
-            const translateY = Math.max(0, 100 - scrollY * 8.1);
+            const translateY = Math.max(0, 100 - scrollY * 0.1);
             newSectionRef.current.style.transform = `translateY(${translateY}vh)`;
           }
 
