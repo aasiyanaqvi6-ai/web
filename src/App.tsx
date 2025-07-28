@@ -83,7 +83,7 @@ function App() {
           }
 
           if (newSectionRef.current) {
-            const translateY = Math.max(0, 100 - scrollY * 0.1);
+            const translateY = Math.max(0, 100 - scrollY * 8.1);
             newSectionRef.current.style.transform = `translateY(${translateY}vh)`;
           }
 
