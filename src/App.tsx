@@ -150,11 +150,10 @@ function App() {
         </div>
 
         {/* Main Text */}
-        <div
-          ref={mainTextRef}
-          className="fixed inset-0 flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out"
-          style={{ top: '60%' }}
-        >
+       <div
+  ref={mainTextRef}
+  className="fixed top-[60%] left-1/2 -translate-x-1/2 pointer-events-none transition-transform duration-100 ease-out z-20"
+>
           <div className="text-center z-10 px-6">
             <div
               className="text-2xl md:text-4xl lg:text-5xl font-bosenAlt tracking-tight text-white/80 leading-tight opacity-0 animate-fade-in-delayed"
