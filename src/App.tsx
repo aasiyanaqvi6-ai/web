@@ -152,7 +152,7 @@ function App() {
         {/* Main Text */}
         <div
           ref={mainTextRef}
-          className="absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out"
+          className="fixed inset-0 flex items-center justify-center pointer-events-none transition-transform duration-100 ease-out"
           style={{ top: '60%' }}
         >
           <div className="text-center z-10 px-6">
