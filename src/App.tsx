@@ -101,15 +101,18 @@ function App() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <div ref={heroRef} className="relative min-h-screen w-full overflow-hidden bg-transparent">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-100"
-          style={{
-            backgroundImage: `url('/public/bg.png')`,
-            backgroundAttachment: 'fixed',
-          }}
-        />
+      <div ref={heroRef} className="relative min-h-screen w-full overflow-hidden bg-transparent z-10">
+     {/* Fixed Background Layer */}
+<div 
+  className="fixed inset-0 z-0 bg-cover bg-center"
+  style={{
+    backgroundImage: `url('/bg.png')`,
+    backgroundAttachment: 'scroll',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    pointerEvents: 'none',
+  }}
+/>
 
         {/* Portrait */}
         <div
