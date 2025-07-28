@@ -101,10 +101,10 @@ function App() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <div ref={heroRef} className="relative min-h-screen w-full overflow-hidden bg-transparent ">
+      <div ref={heroRef} className="relative min-h-screen w-full overflow-hidden bg-transparent z-10">
      {/* Fixed Background Layer */}
 <div 
-  className="fixed inset-0 z-0 bg-cover bg-center"
+  className="fixed inset-0 z-0 bg-cover"
   style={{
     backgroundImage: `url('/bg.png')`,
     backgroundAttachment: 'scroll',
