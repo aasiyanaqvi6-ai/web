@@ -101,10 +101,7 @@ function App() {
   return (
     <div className="relative">
       {/* Hero Section */}
-     <div 
-  ref={heroRef}
-  className="relative min-h-screen w-full bg-transparent"
->  </div>
+      <div ref={heroRef} className="relative min-h-screen w-full bg-transparent z-10">
     <div 
   className="absolute inset-0 bg-cover bg-center opacity-100"
   style={{
